@@ -21,11 +21,11 @@ export default function CreateTask(props) {
                     <div className="row mrgnbtm">
                         <div className="form-group col-md-6">
                             <label htmlFor="exampleInputEmail1">Task</label>
-                            <input {...register("task")} placeholder="Create a Task" className="form-control" name="task" id="task" />
+                            <input {...register("task")} placeholder="Create a Task" className="form-control" name="task" id="task" required/>
                         </div>
                         <div className="form-group col-md-6">
                             <label htmlFor="exampleInputPassword1">Assignee</label>
-                            <input {...register("assignee")} placeholder="Assignee" className="form-control" name="assignee" id="assignee" />
+                            <input {...register("assignee")} placeholder="Assignee" className="form-control" name="assignee" id="assignee" required/>
                         </div>
                     </div>
                     <div className="row mrgnbtm">
