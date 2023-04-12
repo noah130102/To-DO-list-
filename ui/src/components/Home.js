@@ -10,7 +10,7 @@ function Home() {
 
   const [tasks, setTasks] = useState([])
   const [numberOfTasks, setNumberOfTasks] = useState([])
-  const [isTaskEdited, setTaskEdited] = useState(false)
+  const [isTaskEdited, setTaskEdited] = useState(false);
 
   useEffect(() => {
     getAllTasks().then(tasks => {

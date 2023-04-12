@@ -1,7 +1,9 @@
-import React, { useState,useEffect } from "react";
-import Home from "./Home";
-import { Tasks } from "./Tasks";
-import { getAllTasks, deleteTask, fetchSettings } from '../services/TaskService'
+import React, { useState, useEffect } from "react";
+import {
+  getAllTasks,
+  deleteTask,
+  fetchSettings,
+} from "../services/TaskService";
 import { Task2 } from "./Task2";
 
 const Default = () => {
@@ -12,6 +14,7 @@ const Default = () => {
   const [tasks, setTasks] = useState([]);
   const [numberOfTasks, setNumberOfTasks] = useState([]);
   const [isTaskEdited, setTaskEdited] = useState(false);
+  const [show, setshow] = React.useState(0);
 
   useEffect(() => {
     getAllTasks().then((tasks) => {
@@ -37,8 +40,18 @@ const Default = () => {
   return (
     <div className="justify-content-center">
       <div className="p-3 text-center display-2">To Do List</div>
-      
-      <Task2 tasks={tasks} deleteTask={delTask} taskEdited={taskEdited}></Task2>
+      <div className="p-3 text-center display-9 button-container">
+        <button onClick={() => setshow(1)} className="btn-success mx-2">
+          Completed{" "}
+        </button>
+        <button onClick={() => setshow(2)} className="btn-danger mx-2">
+          To Be Initiated{" "}
+        </button>
+        <button onClick={() => setshow(3)} className="btn-primary mx-2">
+          In Progress{" "}
+        </button>
+      </div>
+      <Task2 tasks={tasks} show={show} />
 
       <div className="p-3 d-flex justify-content-end">
         <button href="/Home" className="btn btn-primary" onClick={handleClick}>

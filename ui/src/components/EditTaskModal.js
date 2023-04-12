@@ -53,7 +53,7 @@ export default function EditTaskModal({task, taskEdited}) {
                 <div className="form-group col-md-6">
                     <label htmlFor="status">Status:</label>
                     <select {...register("status")} name="status" defaultValue={task.status} className="form-control" id="status">
-                        <option>To Be Done</option>
+                        <option>To Be Initiated</option>
                         <option>In Progress</option>
                         <option>Completed</option>
                     </select>
